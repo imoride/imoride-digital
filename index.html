@@ -205,6 +205,15 @@
   .reviewer-name { font-weight: 700; font-size: 0.9rem; }
   .reviewer-role { color: var(--gray); font-size: 0.78rem; margin-top: 2px; }
 
+  /* MOBILE TESTIMONIALS — stacked, no slider */
+  @media(max-width:900px){
+    .slider-btns { display: none; }
+    .t-slider { overflow: visible; }
+    .t-track { flex-direction: column; transform: none !important; gap: 16px; }
+    .testimonial { min-width: 0; width: 100%; flex-shrink: 1; }
+    .testimonial blockquote { font-size: 0.92rem; }
+  }
+
   /* PRICING */
   .pricing-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; max-width: 700px; margin: 0 auto; }
   .pricing-card { background: var(--bg2); border: 1px solid var(--border);
@@ -305,7 +314,6 @@
     .steps{grid-template-columns:1fr;}
     .pricing-grid{grid-template-columns:1fr;max-width:400px;}
     .t-header{flex-direction:column;align-items:flex-start;}
-    .testimonial{width:calc(100vw - 10%);min-width:calc(100vw - 10%);}
     .nav-links{display:none;}
     .final-cta{margin:0 4% 60px; padding:56px 24px;}
   }
