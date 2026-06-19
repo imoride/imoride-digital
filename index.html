@@ -305,7 +305,7 @@
     .steps{grid-template-columns:1fr;}
     .pricing-grid{grid-template-columns:1fr;max-width:400px;}
     .t-header{flex-direction:column;align-items:flex-start;}
-    .testimonial{min-width:100%;}
+    .testimonial{width:calc(100vw - 10%);min-width:calc(100vw - 10%);}
     .nav-links{display:none;}
     .final-cta{margin:0 4% 60px; padding:56px 24px;}
   }
@@ -539,7 +539,8 @@ const track=document.getElementById('track');
 const cards=track.querySelectorAll('.testimonial');
 let cur=0;
 function slideTo(i){
-  const max=Math.max(0,cards.length-2);
+  const perView=window.innerWidth<900?1:2;
+  const max=Math.max(0,cards.length-perView);
   cur=Math.max(0,Math.min(i,max));
   const w=cards[0].offsetWidth+24;
   track.style.transform=`translateX(-${cur*w}px)`;
