@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Imoride Digital — More Customers for Your Business</title>
+<meta name="description" content="We find customers in your city and bring them to you as paying clients."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#04091A;
+  --bg2:#070D20;
+  --bg3:#0B1228;
+  --blue:#1565C0;
+  --blue-bright:#2979FF;
+  --blue-glow:#0066FF;
+  --cyan:#00B4D8;
+  --white:#FFFFFF;
+  --gray:#9BA8C0;
+  --border:rgba(255,255,255,0.06);
+  --gold:#FFB800;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:16px 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(4,9,26,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:1px;color:var(--white);}
+.logo span{color:var(--blue-bright);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{
+  background:var(--blue-bright);color:#fff;
+  padding:10px 24px;border-radius:4px;
+  font-weight:700;font-size:0.88rem;text-decoration:none;
+  transition:all .2s;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-cta:hover{background:#1565C0;transform:translateY(-1px);}
+.nav-cta-outline{
+  background:transparent;color:#fff;
+  padding:10px 24px;border-radius:4px;
+  font-weight:600;font-size:0.88rem;text-decoration:none;
+  border:1px solid rgba(255,255,255,0.25);
+  transition:all .2s;
+}
+.nav-cta-outline:hover{border-color:var(--blue-bright);color:var(--blue-bright);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:120px 6% 80px;
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#04091A 0%,#070D20 50%,#0A1230 100%);
+}
+.hero-bg-glow{
+  position:absolute;right:-100px;top:50%;transform:translateY(-50%);
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(41,121,255,0.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-bg-glow2{
+  position:absolute;left:-200px;bottom:-100px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,180,216,0.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-top-tag{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.8rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--blue-bright);margin-bottom:20px;
+}
+.hero-left h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  font-weight:900;line-height:.96;
+  letter-spacing:-1px;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.hero-left h1 .blue{color:var(--blue-bright);}
+.hero-left h1 .line3{
+  background:linear-gradient(90deg,var(--blue-bright),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  color:var(--gray);font-size:1rem;line-height:1.7;
+  max-width:460px;margin-bottom:36px;
+}
+.hero-badges{display:flex;gap:24px;margin-bottom:36px;flex-wrap:wrap;}
+.hero-badge-item{display:flex;align-items:center;gap:7px;font-size:0.8rem;color:var(--gray);font-weight:500;}
+.hero-badge-item svg{color:var(--blue-bright);flex-shrink:0;}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--blue-bright);color:#fff;
+  padding:15px 30px;border-radius:4px;
+  font-weight:700;font-size:0.95rem;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;border:none;cursor:pointer;
+  box-shadow:0 0 30px rgba(41,121,255,0.4);
+}
+.btn-primary:hover{background:#1565C0;transform:translateY(-2px);box-shadow:0 0 50px rgba(41,121,255,0.6);}
+.btn-outline{
+  background:transparent;color:#fff;
+  padding:15px 30px;border-radius:4px;
+  font-weight:600;font-size:0.95rem;text-decoration:none;
+  border:1px solid rgba(255,255,255,0.25);transition:all .2s;
+}
+.btn-outline:hover{border-color:var(--blue-bright);color:var(--blue-bright);}
+
+/* hero photo */
+.hero-right{
+  display:flex;justify-content:center;align-items:flex-end;
+  position:relative;height:100%;min-height:500px;
+}
+.hero-photo-wrap{
+  position:relative;width:100%;max-width:480px;height:580px;
+  margin-left:auto;
+}
+.hero-photo-glow{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:400px;height:200px;
+  background:radial-gradient(ellipse,rgba(41,121,255,0.5) 0%,transparent 70%);
+  border-radius:50%;filter:blur(30px);
+}
+.hero-photo{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:420px;height:560px;
+  object-fit:cover;object-position:top center;
+  /* Placeholder styling — replace with actual photo */
+  background:linear-gradient(180deg,rgba(41,121,255,0.1) 0%,rgba(41,121,255,0.05) 100%);
+  border-radius:4px 4px 0 0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;color:rgba(255,255,255,0.2);
+  letter-spacing:2px;text-transform:uppercase;
+  border:1px solid rgba(41,121,255,0.15);
+  border-bottom:none;
+  /* REMOVE EVERYTHING ABOVE after adding your photo */
+}
+.hero-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  border-radius:4px 4px 0 0;display:block;
+}
+.hero-photo-line{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:420px;height:3px;
+  background:linear-gradient(90deg,transparent,var(--blue-bright),transparent);
+}
+
+/* ── TRUST BAR ── */
+.trust-bar{
+  background:var(--bg2);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:24px 6%;text-align:center;
+}
+.trust-bar-label{
+  font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gray);margin-bottom:20px;font-weight:600;
+}
+.trust-cities{
+  display:flex;gap:32px;justify-content:center;flex-wrap:wrap;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.2rem;font-weight:700;letter-spacing:1px;
+  color:rgba(255,255,255,0.35);
+}
+.trust-cities span{transition:color .2s;cursor:default;}
+.trust-cities span:hover{color:rgba(255,255,255,0.6);}
+
+/* ── SECTION BASE ── */
+section{padding:90px 6%;}
+.section-tag{
+  font-size:0.72rem;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px;
+  display:block;
+}
+h2{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;
+  line-height:1.05;letter-spacing:-0.5px;text-transform:uppercase;
+  margin-bottom:16px;
+}
+h2 .blue{color:var(--blue-bright);}
+.section-sub{color:var(--gray);font-size:1rem;line-height:1.7;max-width:540px;margin-bottom:56px;}
+.center{text-align:center;}
+.center .section-sub{margin:0 auto 56px;}
+
+/* ── VALUE SPLIT ── */
+.value-split{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+.value-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:36px;}
+.value-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:0.95rem;color:var(--gray);line-height:1.6;
+}
+.value-list li::before{
+  content:'✓';color:var(--blue-bright);font-weight:800;
+  font-size:1rem;flex-shrink:0;margin-top:1px;
+}
+.value-card{
+  background:var(--bg3);border:1px solid rgba(41,121,255,0.2);
+  border-radius:8px;padding:36px 32px;
+}
+.value-card h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.5rem;font-weight:800;text-transform:uppercase;
+  text-align:center;letter-spacing:1px;margin-bottom:28px;
+  color:var(--blue-bright);
+}
+.value-feature{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--border);
+}
+.value-feature:last-child{border-bottom:none;}
+.vf-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(41,121,255,0.12);border:1px solid rgba(41,121,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+}
+.vf-text h4{font-size:0.9rem;font-weight:700;margin-bottom:3px;}
+.vf-text p{font-size:0.82rem;color:var(--gray);line-height:1.5;}
+.value-card .btn-primary{width:100%;justify-content:center;margin-top:24px;}
+
+/* ── STATS ── */
+.stats-section{
+  background:linear-gradient(135deg,rgba(21,101,192,0.12),rgba(0,180,216,0.06));
+  border-top:1px solid rgba(41,121,255,0.15);
+  border-bottom:1px solid rgba(41,121,255,0.15);
+  padding:60px 6%;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+.stat-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.5rem,5vw,4rem);font-weight:900;
+  color:var(--blue-bright);line-height:1;margin-bottom:6px;
+}
+.stat-label{font-size:0.82rem;color:var(--gray);font-weight:500;text-transform:uppercase;letter-spacing:1px;}
+
+/* ── HOW IT WORKS ── */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.step{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;padding:36px 28px;
+  transition:transform .25s,border-color .25s;
+  position:relative;
+}
+.step:hover{transform:translateY(-5px);border-color:rgba(41,121,255,0.3);}
+.step::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue-bright),var(--cyan));
+  opacity:0;transition:opacity .25s;border-radius:8px 8px 0 0;
+}
+.step:hover::before{opacity:1;}
+.step-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:3rem;font-weight:900;
+  color:rgba(41,121,255,0.15);line-height:1;margin-bottom:16px;
+}
+.step h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.4rem;font-weight:800;text-transform:uppercase;
+  margin-bottom:12px;letter-spacing:.5px;
+}
+.step p{color:var(--gray);font-size:0.9rem;line-height:1.65;}
+
+/* ── NICHES ── */
+.niches-section{background:var(--bg2);}
+.niches-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+.niche{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:6px;padding:20px 12px;text-align:center;
+  font-size:0.85rem;font-weight:600;color:var(--gray);
+  transition:all .2s;cursor:default;
+}
+.niche:hover{background:rgba(41,121,255,0.08);border-color:rgba(41,121,255,0.3);color:var(--white);}
+.niche-icon{font-size:1.5rem;margin-bottom:8px;}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section{
+  background:var(--bg);
+  position:relative;overflow:hidden;
+}
+.t-tag{color:var(--blue-bright);font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:10px;}
+.testimonials-header{
+  display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;
+}
+.testimonials-header h2{margin-bottom:0;}
+.slider-btns{display:flex;gap:10px;}
+.slider-btn{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--bg2);border:1px solid var(--border);
+  color:var(--white);font-size:1.1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.slider-btn:hover{background:var(--blue-bright);border-color:var(--blue-bright);}
+.testimonials-slider{overflow:hidden;}
+.testimonials-track{
+  display:flex;gap:24px;
+  transition:transform .5s cubic-bezier(.25,.1,.25,1);
+}
+.testimonial{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;padding:32px;
+  min-width:calc(50% - 12px);flex-shrink:0;
+  transition:border-color .25s;
+}
+.testimonial:hover{border-color:rgba(41,121,255,0.25);}
+.stars{color:var(--gold);font-size:0.9rem;letter-spacing:3px;margin-bottom:16px;}
+.testimonial blockquote{
+  color:var(--gray);font-size:0.95rem;line-height:1.7;
+  font-style:italic;margin-bottom:24px;
+}
+.reviewer{display:flex;align-items:center;gap:12px;}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue-bright),var(--cyan));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1rem;color:#fff;flex-shrink:0;
+}
+.reviewer-name{font-weight:700;font-size:0.9rem;}
+.reviewer-role{color:var(--gray);font-size:0.78rem;margin-top:2px;}
+
+/* ── PRICING ── */
+.pricing-section{background:var(--bg2);}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:720px;margin:0 auto;}
+.pricing-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;padding:40px 32px;text-align:center;
+  transition:transform .25s;
+}
+.pricing-card:hover{transform:translateY(-4px);}
+.pricing-card.featured{
+  background:linear-gradient(145deg,rgba(41,121,255,0.1),var(--bg));
+  border-color:var(--blue-bright);
+  position:relative;
+}
+.featured-badge{
+  position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  background:var(--blue-bright);color:#fff;
+  font-size:0.68rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 20px;border-radius:0 0 8px 8px;
+}
+.pricing-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gray);margin-bottom:20px;
+}
+.pricing-price{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:4rem;font-weight:900;line-height:1;
+  margin-bottom:4px;
+}
+.pricing-price sup{font-size:1.8rem;vertical-align:top;margin-top:10px;}
+.pricing-period{color:var(--gray);font-size:0.82rem;margin-bottom:28px;}
+.pricing-features{list-style:none;text-align:left;margin-bottom:32px;}
+.pricing-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  margin-bottom:12px;font-size:0.88rem;color:rgba(255,255,255,0.75);
+}
+.pricing-features li::before{content:'✓';color:var(--blue-bright);font-weight:800;flex-shrink:0;margin-top:1px;}
+.pricing-btn{
+  display:block;width:100%;padding:14px;border-radius:4px;
+  font-weight:700;font-size:0.9rem;cursor:pointer;border:none;
+  text-decoration:none;transition:all .2s;
+}
+.featured .pricing-btn{background:var(--blue-bright);color:#fff;}
+.featured .pricing-btn:hover{background:#1565C0;}
+.pricing-card:not(.featured) .pricing-btn{background:transparent;color:#fff;border:1px solid var(--border);}
+.pricing-card:not(.featured) .pricing-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright);}
+
+/* ── FAQ ── */
+.faq-list{max-width:720px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);padding:22px 0;cursor:pointer;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:0.95rem;}
+.faq-icon{color:var(--blue-bright);font-size:1.4rem;font-weight:300;transition:transform .25s;flex-shrink:0;margin-left:16px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{color:var(--gray);font-size:0.9rem;line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding-top .3s;}
+.faq-item.open .faq-a{max-height:200px;padding-top:12px;}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  background:linear-gradient(135deg,#04091A 0%,#06112B 100%);
+  padding:110px 6%;text-align:center;
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(41,121,255,0.15);
+}
+.final-cta-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(41,121,255,0.18) 0%,transparent 65%);
+  pointer-events:none;
+}
+.final-cta h2{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.5rem,7vw,5.5rem);font-weight:900;
+  text-transform:uppercase;line-height:.95;letter-spacing:-1px;
+  margin-bottom:20px;
+}
+.final-cta h2 .blue{color:var(--blue-bright);}
+.final-cta p{color:var(--gray);font-size:1.05rem;max-width:480px;margin:0 auto 36px;}
+.final-cta .btn-primary{display:inline-flex;font-size:1.05rem;padding:17px 40px;}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:40px 6%;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+footer .logo{font-size:1.2rem;}
+footer p{color:var(--gray);font-size:0.82rem;}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:0.82rem;transition:color .2s;}
+.footer-links a:hover{color:var(--white);}
+
+/* ── ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:110px 6% 60px;text-align:center;}
+  .hero-right{display:none;}
+  .hero-sub{margin:0 auto 32px;}
+  .hero-buttons{justify-content:center;}
+  .hero-badges{justify-content:center;}
+  .value-split{grid-template-columns:1fr;}
+  .steps-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .pricing-grid{grid-template-columns:1fr;max-width:400px;}
+  .testimonials-header{flex-direction:column;align-items:flex-start;}
+  .testimonial{min-width:calc(100% - 0px);}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">IMORIDE <span>DIGITAL</span></div>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#niches">Who We Help</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <a href="#pricing" class="nav-cta-outline">View Pricing</a>
+    <a href="mailto:info@imoride.shop" class="nav-cta">Get Started →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
+  <div class="hero-left">
+    <div class="hero-top-tag">Email Outreach & Lead Generation</div>
+    <h1>
+      GET MORE<br/>
+      <span class="blue">CUSTOMERS.</span><br/>
+      <span class="line3">GROW YOUR BUSINESS.</span>
+    </h1>
+    <p class="hero-sub">We find people in your city who need your service, reach out to them by email on your behalf, and bring them to you as paying customers. You just show up and do the work.</p>
+    <div class="hero-badges">
+      <div class="hero-badge-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Proven Outreach System
+      </div>
+      <div class="hero-badge-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Done Entirely For You
+      </div>
+      <div class="hero-badge-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Real Warm Leads
+      </div>
+    </div>
+    <div class="hero-buttons">
+      <a href="mailto:info@imoride.shop" class="btn-primary">Start Getting Customers →</a>
+      <a href="#how" class="btn-outline">See How It Works</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-glow"></div>
+      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=480&h=600&fit=crop&crop=top" class="hero-photo" alt="Imoride Digital" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:420px;height:560px;object-fit:cover;object-position:top center;border-radius:4px 4px 0 0;display:block;background:none;border:none;font-size:0;" />
+      <div class="hero-photo-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-label">Serving businesses in</div>
+  <div class="trust-cities">
+    <span>Dallas</span><span>Houston</span><span>Miami</span><span>New York</span>
+    <span>Atlanta</span><span>Los Angeles</span><span>Toronto</span><span>Philadelphia</span><span>Seattle</span>
+  </div>
+</div>
+
+<!-- VALUE SPLIT -->
+<section style="background:var(--bg2);">
+  <div class="value-split">
+    <div class="fade-up">
+      <span class="section-tag">Why Imoride Digital</span>
+      <h2>YOU KNOW YOU<br/>NEED MORE<br/><span class="blue">CLIENTS.</span></h2>
+      <p style="color:var(--gray);font-size:1rem;line-height:1.7;margin-bottom:28px;">If you are ready to stop relying on word of mouth and create a consistent flow of new customers, you are in the right place.</p>
+      <ul class="value-list">
+        <li>Build a steady stream of new customer enquiries</li>
+        <li>Stop wasting time chasing jobs that don't come</li>
+        <li>Get outreach running without doing it yourself</li>
+        <li>Focus on the work while we handle the marketing</li>
+        <li>Affordable — one new job covers the full campaign cost</li>
+      </ul>
+      <a href="mailto:info@imoride.shop" class="btn-primary" style="display:inline-flex;">Get Started Today →</a>
+    </div>
+    <div class="value-card fade-up d2">
+      <h3>What You Get</h3>
+      <div class="value-feature">
+        <div class="vf-icon">📋</div>
+        <div class="vf-text"><h4>Targeted Lead Research</h4><p>We find the right contacts in your city who need your specific service.</p></div>
+      </div>
+      <div class="value-feature">
+        <div class="vf-icon">✉️</div>
+        <div class="vf-text"><h4>Email Outreach For You</h4><p>Personalized emails sent on your behalf — you never write a single word.</p></div>
+      </div>
+      <div class="value-feature">
+        <div class="vf-icon">🔥</div>
+        <div class="vf-text"><h4>Warm Leads Delivered</h4><p>Every interested reply comes straight to you, ready to book.</p></div>
+      </div>
+      <div class="value-feature">
+        <div class="vf-icon">📊</div>
+        <div class="vf-text"><h4>Weekly Check-In</h4><p>We keep you updated on campaign progress throughout the month.</p></div>
+      </div>
+      <a href="mailto:info@imoride.shop" class="btn-primary">Join The Movement →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section fade-up">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num"><span class="counter" data-target="500">0</span>+</div>
+      <div class="stat-label">Businesses Reached</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="counter" data-target="12">0</span></div>
+      <div class="stat-label">Cities Covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$<span class="counter" data-target="400">0</span></div>
+      <div class="stat-label">Starting Price</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="counter" data-target="1">0</span></div>
+      <div class="stat-label">Mission: Your Growth</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="center fade-up">
+    <span class="section-tag">The Process</span>
+    <h2>HOW WE GET YOU <span class="blue">CUSTOMERS</span></h2>
+    <p class="section-sub">Simple, transparent, and done entirely for you. No tech skills needed on your end.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step fade-up d1">
+      <div class="step-num">01</div>
+      <h3>We Find Your Customers</h3>
+      <p>We identify people in your city who are actively looking for your type of service — homeowners, property managers, and local businesses who need what you offer.</p>
+    </div>
+    <div class="step fade-up d2">
+      <div class="step-num">02</div>
+      <h3>We Reach Out For You</h3>
+      <p>We send personalized emails on your behalf, introducing your business and getting them interested. You never have to write a single word or make a single cold call.</p>
+    </div>
+    <div class="step fade-up d3">
+      <div class="step-num">03</div>
+      <h3>You Get The Leads</h3>
+      <p>Every positive reply comes straight to you as a warm lead ready to book. You show up, do the job, and get paid. That is the entire process.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="niches" class="niches-section">
+  <div class="center fade-up">
+    <span class="section-tag">Who We Work With</span>
+    <h2>BUILT FOR LOCAL <span class="blue">SERVICE BUSINESSES</span></h2>
+    <p class="section-sub">If you rely on local customers and want a consistent flow of new jobs, this is built for you.</p>
+  </div>
+  <div class="niches-grid fade-up">
+    <div class="niche"><div class="niche-icon">🔧</div>Plumbers</div>
+    <div class="niche"><div class="niche-icon">⚡</div>Electricians</div>
+    <div class="niche"><div class="niche-icon">❄️</div>HVAC</div>
+    <div class="niche"><div class="niche-icon">🏠</div>Handymen</div>
+    <div class="niche"><div class="niche-icon">🧹</div>Cleaners</div>
+    <div class="niche"><div class="niche-icon">🚚</div>Movers</div>
+    <div class="niche"><div class="niche-icon">🌿</div>Lawn Care</div>
+    <div class="niche"><div class="niche-icon">🎨</div>Painters</div>
+    <div class="niche"><div class="niche-icon">🐕</div>Dog Groomers</div>
+    <div class="niche"><div class="niche-icon">🔑</div>Locksmiths</div>
+    <div class="niche"><div class="niche-icon">🏗️</div>Roofers</div>
+    <div class="niche"><div class="niche-icon">🚗</div>Auto Repair</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="reviews">
+  <div class="testimonials-header fade-up">
+    <div>
+      <span class="t-tag">Real Client Results</span>
+      <h2>SUCCESS <span class="blue">STORIES</span></h2>
+    </div>
+    <div class="slider-btns">
+      <button class="slider-btn" id="prev">&#8592;</button>
+      <button class="slider-btn" id="next">&#8594;</button>
+    </div>
+  </div>
+  <div class="testimonials-slider">
+    <div class="testimonials-track" id="track">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Imoride Digital brought us 4 new cleaning contracts in the first month. I was skeptical at first but the leads were real people ready to book. Absolutely worth every penny."</blockquote>
+        <div class="reviewer">
+          <div class="avatar">M</div>
+          <div>
+            <div class="reviewer-name">Marcus J.</div>
+            <div class="reviewer-role">Owner, Spotless Clean — Houston, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We got 6 calls in under 3 weeks from their campaign. Already made back five times what we paid. If you run a local service business and you are not using this, you are leaving money on the table."</blockquote>
+        <div class="reviewer">
+          <div class="avatar">R</div>
+          <div>
+            <div class="reviewer-name">Robert K.</div>
+            <div class="reviewer-role">Owner, Plumbing Plus — Dallas, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I had no system for getting new customers. Imoride Digital set everything up and I started getting enquiries within 10 days. Best investment I made for my business this year."</blockquote>
+        <div class="reviewer">
+          <div class="avatar">D</div>
+          <div>
+            <div class="reviewer-name">David T.</div>
+            <div class="reviewer-role">Owner, DT Handyman — Atlanta, GA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="center fade-up">
+    <span class="section-tag">Pricing</span>
+    <h2>CHOOSE <span class="blue">YOUR PATH</span></h2>
+    <p class="section-sub">No contracts. No hidden fees. Pay once and we start within 24 hours.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card fade-up d1">
+      <div class="pricing-name">Starter Campaign</div>
+      <div class="pricing-price"><sup>$</sup>400</div>
+      <div class="pricing-period">one-time · 30-day campaign</div>
+      <ul class="pricing-features">
+        <li>Targeted outreach in your city</li>
+        <li>Personalized emails sent for you</li>
+        <li>Warm leads forwarded to you directly</li>
+        <li>Weekly check-in report</li>
+        <li>One niche, one city</li>
+      </ul>
+      <a href="mailto:info@imoride.shop?subject=Starter Campaign Enquiry" class="pricing-btn">Get Started</a>
+    </div>
+    <div class="pricing-card featured fade-up d2">
+      <div class="featured-badge">Most Popular</div>
+      <div class="pricing-name">Growth Campaign</div>
+      <div class="pricing-price"><sup>$</sup>750</div>
+      <div class="pricing-period">one-time · 30-day campaign</div>
+      <ul class="pricing-features">
+        <li>Everything in Starter</li>
+        <li>Wider city &amp; area coverage</li>
+        <li>Multiple target audiences</li>
+        <li>Priority lead delivery</li>
+        <li>Follow-up sequences included</li>
+      </ul>
+      <a href="mailto:info@imoride.shop?subject=Growth Campaign Enquiry" class="pricing-btn">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="center fade-up">
+    <span class="section-tag">FAQ</span>
+    <h2>COMMON <span class="blue">QUESTIONS</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item fade-up">
+      <div class="faq-q">Do you guarantee results? <span class="faq-icon">+</span></div>
+      <div class="faq-a">We guarantee the outreach — real emails sent to real targeted contacts. Conversion depends on your team following up. One new job typically covers the full campaign cost many times over.</div>
+    </div>
+    <div class="faq-item fade-up d1">
+      <div class="faq-q">How do you find the leads? <span class="faq-icon">+</span></div>
+      <div class="faq-a">We use Google Maps and business directories to identify property managers, commercial clients, and local contacts in your city who are likely to need your service. All contacts are publicly listed.</div>
+    </div>
+    <div class="faq-item fade-up d2">
+      <div class="faq-q">How quickly do I see results? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Most clients begin seeing replies and enquiries within the first 1 to 2 weeks. We start sending within 24 hours of receiving payment.</div>
+    </div>
+    <div class="faq-item fade-up d3">
+      <div class="faq-q">What do I need to provide? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Just your business name, the city you serve, and your contact details. We handle everything else from there — research, writing, sending, and tracking.</div>
+    </div>
+    <div class="faq-item fade-up d4">
+      <div class="faq-q">How do I pay? <span class="faq-icon">+</span></div>
+      <div class="faq-a">We accept bank transfer, PayPal, Zelle, and Wise. Payment is required upfront before the campaign begins. Email us at info@imoride.shop to get started.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-glow"></div>
+  <h2>YOUR FUTURE SELF IS<br/><span class="blue">WAITING.</span></h2>
+  <p>The time is now. One email to us and your campaign starts within 24 hours.</p>
+  <a href="mailto:info@imoride.shop" class="btn-primary">Start Getting Customers Today →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">IMORIDE <span>DIGITAL</span></div>
+  <div class="footer-links">
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:info@imoride.shop">Contact</a>
+  </div>
+  <p>© 2026 Imoride Digital · info@imoride.shop</p>
+</footer>
+
+<script>
+// Fade-up scroll animations
+const obs = new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// Counter animation
+function animateCount(el){
+  const t=parseInt(el.dataset.target),d=1600,s=t/(d/16);let c=0;
+  const tm=setInterval(()=>{c+=s;if(c>=t){el.textContent=t;clearInterval(tm);}else el.textContent=Math.floor(c);},16);
+}
+const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);cObs.unobserve(e.target);}});},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
+
+// Testimonial slider
+const track=document.getElementById('track');
+const cards=track.querySelectorAll('.testimonial');
+let cur=0;
+function slideTo(i){
+  const max=cards.length-2;
+  cur=Math.max(0,Math.min(i,max));
+  const w=cards[0].offsetWidth+24;
+  track.style.transform=`translateX(-${cur*w}px)`;
+}
+document.getElementById('next').onclick=()=>slideTo(cur+1);
+document.getElementById('prev').onclick=()=>slideTo(cur-1);
+window.addEventListener('resize',()=>slideTo(cur));
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
